@@ -75,18 +75,27 @@ test('Cloning', () => {
 });
 
 test('Base url', () => {
-	// base url string
+	// Base url string
 	assert.equal(new RelativeUrl('./a', '/b/c').href, '/b/a');
 	assert.equal(new RelativeUrl('a', '/b/c').href, '/b/a');
 	assert.equal(new RelativeUrl('/a', '/b/c').href, '/a');
 
-	// base url RelativeUrl
+	// Base url RelativeUrl
 	assert.equal(new RelativeUrl('./a', new RelativeUrl('/b/c')).href, '/b/a');
 	assert.equal(new RelativeUrl('a', new RelativeUrl('/b/c')).href, '/b/a');
 	assert.equal(new RelativeUrl('/a', new RelativeUrl('/b/c')).href, '/a');
 
-	// base url URL
-	assert.equal(new RelativeUrl('./a', new URL('https://google.com/b/c')).href, '/b/a');
-	assert.equal(new RelativeUrl('a', new URL('https://google.com/b/c')).href, '/b/a');
-	assert.equal(new RelativeUrl('/a', new URL('https://google.com/b/c')).href, '/a');
-})
+	// Base url URL
+	assert.equal(
+		new RelativeUrl('./a', new URL('https://google.com/b/c')).href,
+		'/b/a',
+	);
+	assert.equal(
+		new RelativeUrl('a', new URL('https://google.com/b/c')).href,
+		'/b/a',
+	);
+	assert.equal(
+		new RelativeUrl('/a', new URL('https://google.com/b/c')).href,
+		'/a',
+	);
+});

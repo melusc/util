@@ -80,7 +80,7 @@ url.search === '?q=bye';
 
 ```ts
 const url = new RelativeUrl('/search?q=ts&p=1');
-url.searchParams // URLSearchParams { q -> "ts", p -> "1" }
+console.log(url.searchParams); // URLSearchParams { q -> "ts", p -> "1" }
 ```
 
 ### hash

@@ -18,7 +18,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 export class RelativeUrl {
 	readonly #url: URL;
 
-	constructor(url: string | URL | RelativeUrl, base?: string | URL | RelativeUrl) {
+	constructor(
+		url: string | URL | RelativeUrl,
+		base?: string | URL | RelativeUrl,
+	) {
 		// It doesn't matter what the base url is, because that is not exposed publically
 		base ??= 'http://relativeurl/';
 
@@ -29,9 +32,7 @@ export class RelativeUrl {
 		}
 
 		this.#url
-			= url instanceof RelativeUrl
-				? new URL(url.href, base)
-				: new URL(url, base);
+			= url instanceof RelativeUrl ? new URL(url.href, base) : new URL(url, base);
 	}
 
 	get href(): string {
