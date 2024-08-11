@@ -21,7 +21,7 @@
 	],
 	"license": "GPL-3.0-only",
 	"repository": {
-		"url": "https://github.com/melusc/util"
+		"url": "https://github.com/melusc/util.git"
 	},
 	"scripts": {
 		"fmt": "prettier -w . && xo --fix",
