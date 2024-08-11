@@ -5,12 +5,12 @@ test('pathname only', () => {
 	const u = new RelativeUrl('/abc');
 
 	assert.equal(u.path, '/abc');
-	assert.equal(u.full, '/abc');
+	assert.equal(u.href, '/abc');
 
 	u.path = '/def';
 
 	assert.equal(u.path, '/def');
-	assert.equal(u.full, '/def');
+	assert.equal(u.href, '/def');
 });
 
 test('search', () => {
@@ -18,7 +18,7 @@ test('search', () => {
 
 	assert.equal(u.search, '?a=b');
 	assert.equal(u.searchParams.get('a'), 'b');
-	assert.equal(u.full, '/?a=b');
+	assert.equal(u.href, '/?a=b');
 
 	u.searchParams.delete('a');
 	assert.equal(u.search, '');
@@ -26,37 +26,37 @@ test('search', () => {
 	u.search = 'b=c';
 	assert.equal(u.search, '?b=c');
 	assert.equal(u.searchParams.get('b'), 'c');
-	assert.equal(u.full, '/?b=c');
+	assert.equal(u.href, '/?b=c');
 });
 
 test('hash', () => {
 	const u = new RelativeUrl('#abc');
 
 	assert.equal(u.hash, '#abc');
-	assert.equal(u.full, '/#abc');
+	assert.equal(u.href, '/#abc');
 
 	u.hash = '';
 
 	assert.equal(u.hash, '');
-	assert.equal(u.full, '/');
+	assert.equal(u.href, '/');
 
 	u.hash = 'def';
 
 	assert.equal(u.hash, '#def');
-	assert.equal(u.full, '/#def');
+	assert.equal(u.href, '/#def');
 });
 
-test('full', () => {
+test('href', () => {
 	const u = new RelativeUrl('/path?query=1#hash');
 
 	assert.equal(u.path, '/path');
 	assert.equal(u.search, '?query=1');
 	assert.equal(u.hash, '#hash');
-	assert.equal(u.full, '/path?query=1#hash');
+	assert.equal(u.href, '/path?query=1#hash');
 
 	assert.throws(() => {
 		// @ts-expect-error Is readonly
-		u.full = '/';
+		u.href = '/';
 	});
 });
 
@@ -64,12 +64,29 @@ test('Cloning', () => {
 	const url = new URL('http://localhost/abc?query=1#h1');
 	const rUrl = new RelativeUrl(url);
 
-	assert.equal(rUrl.full, '/abc?query=1#h1');
+	assert.equal(rUrl.href, '/abc?query=1#h1');
 
 	const rUrlClone = new RelativeUrl(rUrl);
 
-	assert.equal(rUrlClone.full, '/abc?query=1#h1');
+	assert.equal(rUrlClone.href, '/abc?query=1#h1');
 
 	assert.notEqual(rUrl, rUrlClone);
 	assert.notEqual(rUrl.searchParams, rUrlClone.searchParams);
 });
+
+test('Base url', () => {
+	// base url string
+	assert.equal(new RelativeUrl('./a', '/b/c').href, '/b/a');
+	assert.equal(new RelativeUrl('a', '/b/c').href, '/b/a');
+	assert.equal(new RelativeUrl('/a', '/b/c').href, '/a');
+
+	// base url RelativeUrl
+	assert.equal(new RelativeUrl('./a', new RelativeUrl('/b/c')).href, '/b/a');
+	assert.equal(new RelativeUrl('a', new RelativeUrl('/b/c')).href, '/b/a');
+	assert.equal(new RelativeUrl('/a', new RelativeUrl('/b/c')).href, '/a');
+
+	// base url URL
+	assert.equal(new RelativeUrl('./a', new URL('https://google.com/b/c')).href, '/b/a');
+	assert.equal(new RelativeUrl('a', new URL('https://google.com/b/c')).href, '/b/a');
+	assert.equal(new RelativeUrl('/a', new URL('https://google.com/b/c')).href, '/a');
+})

@@ -18,14 +18,23 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 export class RelativeUrl {
 	readonly #url: URL;
 
-	constructor(base: string | URL | RelativeUrl) {
+	constructor(url: string | URL | RelativeUrl, base?: string | URL | RelativeUrl) {
+		// It doesn't matter what the base url is, because that is not exposed publically
+		base ??= 'http://relativeurl/';
+
+		if (base instanceof RelativeUrl) {
+			base = base.#url;
+		} else if (typeof base === 'string') {
+			base = new URL(base, 'http://relativeurl/');
+		}
+
 		this.#url
-			= base instanceof RelativeUrl
-				? new URL(base.full, 'http://localhost/')
-				: new URL(base, 'http://localhost/');
+			= url instanceof RelativeUrl
+				? new URL(url.href, base)
+				: new URL(url, base);
 	}
 
-	get full(): string {
+	get href(): string {
 		const url = this.#url;
 
 		return url.pathname + url.search + url.hash;
