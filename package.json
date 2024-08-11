@@ -1,0 +1,41 @@
+{
+	"type": "module",
+	"name": "@lusc/util",
+	"publishConfig": {
+		"access": "public"
+	},
+	"author": {
+		"email": "oss@lusc.ch",
+		"name": "melusc",
+		"url": "https://github.com/melusc"
+	},
+	"engines": {
+		"node": ">=22.6.0"
+	},
+	"exports": {
+		".": "./dist/index.js",
+		"./*": "./dist/*.js"
+	},
+	"files": [
+		"dist"
+	],
+	"license": "GPL-3.0-only",
+	"repository": {
+		"url": "https://github.com/melusc/util"
+	},
+	"scripts": {
+		"fmt": "prettier -w . && xo --fix",
+		"build": "tsc",
+		"test": "vitest run"
+	},
+	"version": "0.0.0",
+	"packageManager": "yarn@4.4.0",
+	"devDependencies": {
+		"@lusc/tsconfig": "^5.1.0",
+		"@types/node": "^22.2.0",
+		"prettier": "^3.3.3",
+		"typescript": "^5.5.4",
+		"vitest": "^2.0.5",
+		"xo": "^0.59.3"
+	}
+}
