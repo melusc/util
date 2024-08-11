@@ -28,7 +28,7 @@
 		"build": "tsc",
 		"test": "vitest run"
 	},
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"packageManager": "yarn@4.4.0",
 	"devDependencies": {
 		"@lusc/tsconfig": "^5.1.0",
