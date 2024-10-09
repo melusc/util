@@ -29,7 +29,7 @@
 		"test": "vitest run"
 	},
 	"version": "1.2.0",
-	"packageManager": "yarn@4.4.0",
+	"packageManager": "yarn@4.5.0",
 	"devDependencies": {
 		"@lusc/tsconfig": "^5.1.0",
 		"@types/node": "^22.2.0",
