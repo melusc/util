@@ -332,8 +332,8 @@ __metadata:
   linkType: hard
 
 "@lusc/eslint-config@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@lusc/eslint-config@npm:1.0.1"
+  version: 1.1.0
+  resolution: "@lusc/eslint-config@npm:1.1.0"
   dependencies:
     "@eslint-community/eslint-plugin-eslint-comments": "npm:^4.4.1"
     "@eslint/js": "npm:^9.14.0"
@@ -343,7 +343,7 @@ __metadata:
     globals: "npm:^15.12.0"
     typescript: "npm:^5.6.3"
     typescript-eslint: "npm:^8.13.0"
-  checksum: 10c0/16a325fe1029f5b16578e19660e730aed18e5df92c60f3282e59c7148ec1be566221019368ffbc0c60a572f3a89cf594da5790b0c294fa01b1b7783b8c9f171a
+  checksum: 10c0/e42e7465ba601dd3715805317d7cdf4a05cc6202dfcfef51137e2e642bde8b541d59db708ba707d4f8b34023b37b87376ec9be23302dfdcfa1bd2533dcce2c86
   languageName: node
   linkType: hard
 
