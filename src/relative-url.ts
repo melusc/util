@@ -31,8 +31,8 @@ export class RelativeUrl {
 			base = new URL(base, 'http://relativeurl/');
 		}
 
-		this.#url
-			= url instanceof RelativeUrl ? new URL(url.href, base) : new URL(url, base);
+		this.#url =
+			url instanceof RelativeUrl ? new URL(url.href, base) : new URL(url, base);
 	}
 
 	get href(): string {
