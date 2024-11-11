@@ -1,4 +1,5 @@
 import {assert, test} from 'vitest';
+
 import {RelativeUrl} from '../src/relative-url.ts';
 
 test('pathname only', () => {
