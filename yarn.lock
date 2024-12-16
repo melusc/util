@@ -342,7 +342,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lusc/eslint-config@npm:^3.4.0":
+"@lusc/eslint-config@npm:^3.4.1":
   version: 3.4.1
   resolution: "@lusc/eslint-config@npm:3.4.1"
   dependencies:
@@ -375,10 +375,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lusc/util@workspace:."
   dependencies:
-    "@lusc/eslint-config": "npm:^3.4.0"
+    "@lusc/eslint-config": "npm:^3.4.1"
     "@lusc/tsconfig": "npm:^5.1.0"
-    "@types/node": "npm:^22.10.1"
-    eslint: "npm:^9.16.0"
+    "@types/node": "npm:^22.10.2"
+    eslint: "npm:^9.17.0"
     prettier: "npm:^3.4.2"
     typescript: "npm:^5.7.2"
     vitest: "npm:^2.1.8"
@@ -595,7 +595,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^22.10.1":
+"@types/node@npm:^22.10.2":
   version: 22.10.2
   resolution: "@types/node@npm:22.10.2"
   dependencies:
@@ -1491,7 +1491,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.16.0":
+"eslint@npm:^9.17.0":
   version: 9.17.0
   resolution: "eslint@npm:9.17.0"
   dependencies:
