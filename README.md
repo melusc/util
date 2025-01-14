@@ -25,7 +25,7 @@ url.searchParams.set('def', '3');
 console.log(url.href); // /path?abc=1&def=3#xyz
 ```
 
-### Api
+### API
 
 `RelativeUrl` accepts an optional second argument `base`. You can use this for relative urls:
 
@@ -94,9 +94,40 @@ url.hash = 'xyz';
 url.hash === '#xyz';
 ```
 
+## generate-password
+
+Generate passwords with requirements. Customise length and charsets.
+
+### Usage
+
+```ts
+import {generatePassword} from '@lusc/util/generate-password';
+
+generatePassword(); // "ZPq4McdyOm.qF7oo*vGw@_wzlV(5HlMt"
+generatePassword({length: 10}); // "EPiL<h8=JJ"
+generatePassword({special: false}); // "43HOVXhnoCYjFI0eMSzV3FizFCmGIqM8"
+```
+
+### API
+
+```ts
+function generatePassword(options?: {
+	// Specify length of generated password
+	length?: number;
+	// Include special characters. Default true
+	special?: boolean;
+	// Include numbers. Default true
+	number?: boolean;
+	// Include lowercase characters. Default true
+	lower?: boolean;
+	// Include uppercase characters. Default true
+	upper?: boolean;
+}): string;
+```
+
 ## License
 
-Copyright (C) 2024 Luca Schnellmann
+Copyright (C) 2025 Luca Schnellmann
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
