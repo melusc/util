@@ -120,9 +120,11 @@ test('lower, upper, special, number, length 200000', () => {
 	assert.equal(password.length, 200_000);
 
 	assert.deepEqual(
+		// eslint-disable-next-line @typescript-eslint/no-misused-spread
 		new Set([...password].sort()),
 		new Set(
 			[
+				// eslint-disable-next-line @typescript-eslint/no-misused-spread
 				...(uppercaseCharSet +
 					lowercaseCharSet +
 					numberCharSet +
