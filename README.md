@@ -127,7 +127,7 @@ function generatePassword(options?: {
 
 ## make-slug
 
-Sluggify strings, make url safe, remove diacritics.
+Sluggify strings, returns url-safe string without remove diacritics or special characters.
 
 ### Usage
 
