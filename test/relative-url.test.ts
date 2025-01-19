@@ -16,7 +16,7 @@
 
 import {assert, test} from 'vitest';
 
-import {RelativeUrl} from '../src/relative-url.ts';
+import {RelativeUrl} from '../src/relative-url.js';
 
 test('pathname only', () => {
 	const u = new RelativeUrl('/abc');

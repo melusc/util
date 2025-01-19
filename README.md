@@ -113,16 +113,39 @@ generatePassword({special: false}); // "43HOVXhnoCYjFI0eMSzV3FizFCmGIqM8"
 ```ts
 function generatePassword(options?: {
 	// Specify length of generated password
-	length?: number;
-	// Include special characters. Default true
-	special?: boolean;
-	// Include numbers. Default true
-	number?: boolean;
-	// Include lowercase characters. Default true
-	lower?: boolean;
-	// Include uppercase characters. Default true
-	upper?: boolean;
+	length?: number = 32;
+	// Include special characters
+	special?: boolean = true;
+	// Include numbers
+	number?: boolean = true;
+	// Include lowercase characters
+	lower?: boolean = true;
+	// Include uppercase characters
+	upper?: boolean = true;
 }): string;
+```
+
+## make-slug
+
+Sluggify strings, make url safe, remove diacritics.
+
+### Usage
+
+```ts
+import {makeSlug} from '@lusc/util/slug';
+
+makeSlug('Röbert the Böbert!'); // "robert-the-bobert-b9f60c69"
+makeSlug('Röbert the Böbert!', {appendRandomHex: false}); // "robert-the-bobert"
+```
+
+### API
+
+```ts
+type SlugOptions = {
+	appendRandomHex?: boolean;
+};
+
+function makeSlug(input: string, options?: SlugOptions): string;
 ```
 
 ## License
