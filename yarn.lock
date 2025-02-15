@@ -357,6 +357,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@lusc/clean-package@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@lusc/clean-package@npm:1.0.0"
+  dependencies:
+    json-stable-stringify: "npm:^1.2.1"
+  bin:
+    clean-package: dist/index.js
+  checksum: 10c0/d44861d48f978ca5335e21f283349892d1f52abe6593a5e4f74a181447e9adfcc0ff7b0bd17789beeb7adb16e86bffc665a85c81693b16210f6f73334638e3ce
+  languageName: node
+  linkType: hard
+
 "@lusc/eslint-config@npm:^4.1.0":
   version: 4.1.0
   resolution: "@lusc/eslint-config@npm:4.1.0"
@@ -390,11 +401,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lusc/util@workspace:."
   dependencies:
+    "@lusc/clean-package": "npm:^1.0.0"
     "@lusc/eslint-config": "npm:^4.1.0"
     "@lusc/tsconfig": "npm:^6.0.2"
     "@types/node": "npm:^22.10.10"
     eslint: "npm:^9.19.0"
-    json-stable-stringify: "npm:^1.2.1"
     prettier: "npm:^3.4.2"
     typescript: "npm:^5.7.3"
     vitest: "npm:^3.0.4"
