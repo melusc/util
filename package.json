@@ -1,9 +1,6 @@
 {
 	"type": "module",
 	"name": "@lusc/util",
-	"publishConfig": {
-		"access": "public"
-	},
 	"author": {
 		"email": "oss@lusc.ch",
 		"name": "melusc",
