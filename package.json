@@ -28,7 +28,7 @@
 	"version": "1.4.3",
 	"packageManager": "yarn@4.6.0",
 	"devDependencies": {
-		"@lusc/clean-package": "^1.0.0",
+		"@lusc/clean-package": "^2.1.0",
 		"@lusc/eslint-config": "^4.1.0",
 		"@lusc/tsconfig": "^6.0.2",
 		"@types/node": "^22.10.10",
