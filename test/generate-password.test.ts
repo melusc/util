@@ -108,16 +108,16 @@ test('special, length 200', () => {
 	assert.match(password, /^[^\da-z]{200}$/i);
 });
 
-test('lower, upper, special, number, length 200000', () => {
+test('lower, upper, special, number, length 65535', () => {
 	const password = generatePassword({
-		length: 200_000,
+		length: 65_535,
 		uppercase: true,
 		lowercase: true,
 		special: true,
 		number: true,
 	});
 
-	assert.equal(password.length, 200_000);
+	assert.equal(password.length, 65_535);
 
 	assert.deepEqual(
 		// eslint-disable-next-line @typescript-eslint/no-misused-spread

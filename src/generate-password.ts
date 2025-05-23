@@ -14,12 +14,36 @@
 	License along with this program. If not, see <https://www.gnu.org/licenses/>.
 */
 
-import {randomInt} from 'node:crypto';
-
 export const lowercaseCharSet = 'abcdefghijklmnopqrstuvwxyz';
 export const uppercaseCharSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 export const numberCharSet = '0123456789';
 export const specialCharSet = '~!@#$%^&*()_-+=:;<,>.?/';
+
+const MAX_RANDOM_NUMBER = 2 ** 16 - 1;
+
+// calling crypto.getRandomValues every time is not efficient
+const randomValuesCache = new Uint16Array(128);
+let randomValuesCacheIndex = 0;
+// eslint-disable-next-line n/no-unsupported-features/node-builtins
+crypto.getRandomValues(randomValuesCache);
+
+// max is exclusive, like node's crypto.randomInt
+function randomInt(max: number) {
+	if (max >= MAX_RANDOM_NUMBER) {
+		throw new RangeError(
+			`max must be less than ${MAX_RANDOM_NUMBER} (got ${max}).`,
+		);
+	}
+
+	if (randomValuesCacheIndex >= randomValuesCache.length) {
+		randomValuesCacheIndex = 0;
+		// eslint-disable-next-line n/no-unsupported-features/node-builtins
+		crypto.getRandomValues(randomValuesCache);
+	}
+
+	const unscaled = randomValuesCache[randomValuesCacheIndex++]!;
+	return Math.floor((unscaled / (MAX_RANDOM_NUMBER + 1)) * max);
+}
 
 function randomChar(chars: string) {
 	const index = randomInt(chars.length);
