@@ -7,7 +7,7 @@
 		"url": "https://github.com/melusc"
 	},
 	"engines": {
-		"node": "^22.14.0 || ^23.8.0"
+		"node": "^22.16.0 || ^24.1.0"
 	},
 	"exports": {
 		"./generate-password": "./dist/generate-password.js",
