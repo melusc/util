@@ -10,8 +10,9 @@
 		"node": "^22.14.0 || ^23.8.0"
 	},
 	"exports": {
-		".": "./dist/index.js",
-		"./*": "./dist/*.js"
+		"./generate-password": "./dist/generate-password.js",
+		"./relative-url": "./dist/relative-url.js",
+		"./slug": "./dist/slug.js"
 	},
 	"files": [
 		"dist"
