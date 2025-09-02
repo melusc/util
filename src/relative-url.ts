@@ -21,7 +21,7 @@ export class RelativeUrl {
 		url: string | URL | RelativeUrl,
 		base?: string | URL | RelativeUrl,
 	) {
-		// It doesn't matter what the base url is, because that is not exposed publically
+		// It doesn't matter what the base url is, because that is not exposed publicly
 		base ??= 'http://relativeurl/';
 
 		if (base instanceof RelativeUrl) {
