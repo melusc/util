@@ -2,6 +2,7 @@
 	"extends": "@lusc/tsconfig",
 	"include": ["src/**/*.ts", "test/**/*.ts", "scripts/*.ts"],
 	"compilerOptions": {
-		"types": ["node"]
+		"types": ["node"],
+		"rootDir": "."
 	}
 }
