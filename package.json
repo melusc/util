@@ -26,7 +26,7 @@
 		"build": "tsc -p tsconfig.build.json",
 		"test": "vitest run"
 	},
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"packageManager": "pnpm@11.5.0",
 	"devDependencies": {
 		"@lusc/clean-package": "^3.0.0",
