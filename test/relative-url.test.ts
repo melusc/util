@@ -92,17 +92,17 @@ test('Cloning', () => {
 });
 
 test('Base url', () => {
-	// Base url string
+	// Base URL string
 	assert.equal(new RelativeUrl('./a', '/b/c').href, '/b/a');
 	assert.equal(new RelativeUrl('a', '/b/c').href, '/b/a');
 	assert.equal(new RelativeUrl('/a', '/b/c').href, '/a');
 
-	// Base url RelativeUrl
+	// Base URL RelativeUrl
 	assert.equal(new RelativeUrl('./a', new RelativeUrl('/b/c')).href, '/b/a');
 	assert.equal(new RelativeUrl('a', new RelativeUrl('/b/c')).href, '/b/a');
 	assert.equal(new RelativeUrl('/a', new RelativeUrl('/b/c')).href, '/a');
 
-	// Base url URL
+	// Base URL URL
 	assert.equal(
 		new RelativeUrl('./a', new URL('https://google.com/b/c')).href,
 		'/b/a',

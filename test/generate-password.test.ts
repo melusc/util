@@ -108,6 +108,8 @@ test('special, length 200', () => {
 	assert.match(password, /^[^\da-z]{200}$/i);
 });
 
+const collator = new Intl.Collator('en-GB');
+
 test('lower, upper, special, number, length 65535', () => {
 	const password = generatePassword({
 		length: 65_535,
@@ -121,7 +123,7 @@ test('lower, upper, special, number, length 65535', () => {
 
 	assert.deepEqual(
 		// eslint-disable-next-line @typescript-eslint/no-misused-spread
-		new Set([...password].toSorted()),
+		new Set([...password].toSorted(collator.compare)),
 		new Set(
 			[
 				// eslint-disable-next-line @typescript-eslint/no-misused-spread
@@ -129,7 +131,7 @@ test('lower, upper, special, number, length 65535', () => {
 					lowercaseCharSet +
 					numberCharSet +
 					specialCharSet),
-			].toSorted(),
+			].toSorted(collator.compare),
 		),
 	);
 });

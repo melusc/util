@@ -23,9 +23,7 @@ const MAX_RANDOM_NUMBER = 2 ** 16 - 1;
 
 // calling crypto.getRandomValues every time is not efficient
 const randomValuesCache = new Uint16Array(128);
-let randomValuesCacheIndex = 0;
-// eslint-disable-next-line n/no-unsupported-features/node-builtins
-crypto.getRandomValues(randomValuesCache);
+let randomValuesCacheIndex = 128;
 
 // max is exclusive, like node's crypto.randomInt
 function randomInt(max: number) {
