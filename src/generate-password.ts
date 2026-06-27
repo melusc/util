@@ -51,7 +51,9 @@ function randomChar(chars: string) {
 function shuffleArray(array: unknown[]) {
 	for (let index1 = array.length - 1; index1 > 0; index1--) {
 		const index2 = randomInt(index1);
-		[array[index1], array[index2]] = [array[index2]!, array[index1]!];
+		const t = array[index2];
+		array[index2] = array[index1];
+		array[index1] = t;
 	}
 }
 
