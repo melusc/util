@@ -27,15 +27,15 @@
 		"test": "vitest run"
 	},
 	"version": "2.1.1",
-	"packageManager": "pnpm@11.7.0",
+	"packageManager": "pnpm@11.10.0",
 	"devDependencies": {
 		"@lusc/clean-package": "^3.0.2",
 		"@lusc/eslint-config": "^17.0.0",
 		"@lusc/tsconfig": "^7.2.1",
-		"@types/node": "^24.13.2",
-		"eslint": "^10.5.0",
-		"prettier": "^3.8.4",
+		"@types/node": "^24.13.3",
+		"eslint": "^10.6.0",
+		"prettier": "^3.9.5",
 		"typescript": "^6.0.3",
-		"vitest": "^4.1.9"
+		"vitest": "^4.1.10"
 	}
 }
