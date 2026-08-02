@@ -35,7 +35,7 @@ function randomInt(max: number) {
 
 	if (randomValuesCacheIndex >= randomValuesCache.length) {
 		randomValuesCacheIndex = 0;
-		// eslint-disable-next-line n/no-unsupported-features/node-builtins
+
 		crypto.getRandomValues(randomValuesCache);
 	}
 
