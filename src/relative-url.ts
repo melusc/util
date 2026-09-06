@@ -19,15 +19,12 @@ export class RelativeUrl {
 
 	constructor(
 		url: string | URL | RelativeUrl,
-		base?: string | URL | RelativeUrl,
+		base: string | URL | RelativeUrl = 'https://lusc.relativeurl/',
 	) {
-		// It doesn't matter what the base URL is, because that is not exposed publicly
-		base ??= 'http://relativeurl/';
-
 		if (base instanceof RelativeUrl) {
 			base = base.#url;
 		} else if (typeof base === 'string') {
-			base = new URL(base, 'http://relativeurl/');
+			base = new URL(base, 'https://lusc.relativeurl/');
 		}
 
 		this.#url =
