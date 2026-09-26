@@ -27,8 +27,7 @@ export class RelativeUrl {
 			base = new URL(base, 'https://lusc.relativeurl/');
 		}
 
-		this.#url =
-			url instanceof RelativeUrl ? new URL(url.href, base) : new URL(url, base);
+		this.#url = new URL(url instanceof RelativeUrl ? url.href : url, base);
 	}
 
 	get href(): string {
